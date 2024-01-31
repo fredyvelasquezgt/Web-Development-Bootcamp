@@ -5,8 +5,18 @@
   padding: 10px;
 }
 
+#outer-box{
+  padding: 10px;
+  border: 10px solid purple;
+}
+
 p {
-  color: yellow;
+  color: white;
   margin: 0;
   padding: 0;
+}
+
+.inner-box {
+  background-color: red;
+  padding: 10px;
 }
