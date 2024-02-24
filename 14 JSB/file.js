@@ -16,3 +16,8 @@ function test() {
   
   test()
   
+  var tweetw = prompt('Insert your tweet: ');
+var extension = 260;
+var total = extension - tweetw.length;
+console.log('Your tweet has ' + tweetw.length + ' caracters' + ' with ' + total + 
+           ' caracters left');
