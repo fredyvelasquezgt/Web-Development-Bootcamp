@@ -28,3 +28,8 @@ console.log('Your tweet has ' + tweetw.length + ' caracters' + ' with ' + total 
            nameUpper = nameSlice.toUpperCase()
            restName = name.slice(1, name.length)
            alert('Hello,  ' + nameUpper+restName)
+
+           var dogAge = prompt("Enter your name: ")
+           var humanAge = (dogAge - 2) * 4 + 21;
+           console.log(humanAge)
+           
