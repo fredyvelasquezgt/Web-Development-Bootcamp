@@ -45,3 +45,31 @@ console.log('Your tweet has ' + tweetw.length + ' caracters' + ' with ' + total 
             move();
          }
          
+         /**
+ * Welcome to the Stanford Karel IDE.
+ * This is a free space for you to 
+ * write any Karel program you want.
+ **/
+function main(){
+  
+  putBeeper();
+  movement();
+  putBeeper();
+  movement();
+  putBeeper();
+  movement();
+  putBeeper();
+  movement();
+  putBeeper();
+  
+
+}
+
+function movement() {
+  move();
+  turnLeft();
+  move();
+  turnLeft();
+  turnLeft();
+  turnLeft();
+}
