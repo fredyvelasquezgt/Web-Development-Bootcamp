@@ -32,4 +32,16 @@ console.log('Your tweet has ' + tweetw.length + ' caracters' + ' with ' + total 
            var dogAge = prompt("Enter your name: ")
            var humanAge = (dogAge - 2) * 4 + 21;
            console.log(humanAge)
-           
+
+           function main(){
+            move();
+            move();
+            move();
+            move();
+            turnLeft();
+            move();
+            move();
+            move();
+            move();
+         }
+         
