@@ -21,3 +21,10 @@ var extension = 260;
 var total = extension - tweetw.length;
 console.log('Your tweet has ' + tweetw.length + ' caracters' + ' with ' + total + 
            ' caracters left');
+
+
+           name = prompt("Enter your name: ")
+           nameSlice = name.slice(0,1)
+           nameUpper = nameSlice.toUpperCase()
+           restName = name.slice(1, name.length)
+           alert('Hello,  ' + nameUpper+restName)
