@@ -94,3 +94,5 @@ function getMilk () {
   console.log("moveLeft");
   console.log("enterHouse");
 }
+
+getMilk(5);
