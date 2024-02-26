@@ -73,3 +73,7 @@ function movement() {
   turnLeft();
   turnLeft();
 }
+
+function getMilk () {
+  
+}
