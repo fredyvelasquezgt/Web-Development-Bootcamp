@@ -96,3 +96,25 @@ function getMilk () {
 }
 
 getMilk(5);
+
+function lifeInWeeks(age) {
+    
+  /************Don't change the code above************/    
+      
+      //Write your code here.
+      //Write your code here.
+    var yearR = 90 - age;
+    var days = yearR * 365;
+    var weeks =  yearR * 52;
+    var months = yearR * 12;
+  
+  
+    console.log('You have ' + days + ' days, ' + weeks+ ' weeks, and ' + months + ' months ' + 'left.');
+  
+      
+  /*************Don't change the code below**********/
+  }
+  
+  
+  lifeInWeeks(56)
+  
