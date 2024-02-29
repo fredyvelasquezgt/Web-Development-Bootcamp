@@ -173,3 +173,11 @@ function isLeap(year) {
   }
 }
 
+var name = prompt('Enter your name: ')
+names = ['Fredy', 'Juan', 'Pedro']
+
+if(names.includes(name)) {
+    console.log('welcome')
+} else {
+    console.log('not welcome')
+}
