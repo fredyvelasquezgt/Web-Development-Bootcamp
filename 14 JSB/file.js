@@ -215,3 +215,15 @@ function whosPaying(names) {
   }
   
   whosPaying(['Angela', 'Ben', 'Jenny', 'Michael', 'Chloe'])
+
+
+  function beer() {
+    b = 100;
+    while (b > 0) {
+      console.log('I have ' + b + ' beers')
+      b--;
+    }
+  
+  }
+  
+  beer()
