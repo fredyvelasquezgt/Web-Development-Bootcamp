@@ -137,3 +137,10 @@ console.log(bmi)
 bmi should equal 20 when it's rounded to the nearest whole number.
 
 */
+
+
+var name1 = prompt('Ingresa tu nombre: ')
+var name2 = prompt('Ingresa el otro nombre: ')
+n = Math.random();
+n = n * 100 + 1;
+console.log('Tu probabilidad de amor es: ' +  Math.floor(n) + '%');
