@@ -181,3 +181,23 @@ if(names.includes(name)) {
 } else {
     console.log('not welcome')
 }
+
+var number = [];
+var n = 1;
+
+
+function FizzBuzz() {
+    if(n % 3 == 0) {
+        number.push('Fizz')
+    } else if (n % 5 == 0) {
+        number.push('Buzz')
+    } else if (n % 3 == 0 && n % 5 == 0) {
+        number.push('FizzBuzz')
+    } else {
+            number.push(n);
+    }
+    n++;
+    console.log(number)
+}
+
+FizzBuzz();
