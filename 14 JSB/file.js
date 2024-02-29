@@ -201,3 +201,17 @@ function FizzBuzz() {
 }
 
 FizzBuzz();
+
+function whosPaying(names) {
+
+  /******Don't change the code above*******/
+    var namesLength = names.length;
+    var randomNumber = Math.floor(Math.random() * namesLength)
+    var position = names[randomNumber];
+    return position +' is going to buy lunch today!';
+  
+  
+  /******Don't change the code below*******/    
+  }
+  
+  whosPaying(['Angela', 'Ben', 'Jenny', 'Michael', 'Chloe'])
