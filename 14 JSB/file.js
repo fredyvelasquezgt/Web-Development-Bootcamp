@@ -227,3 +227,32 @@ function whosPaying(names) {
   }
   
   beer()
+
+  function add(x,y) {
+    return x + y;
+}
+undefined
+function substract(x,y) {
+    return x - y;
+}
+undefined
+function multiply(x,y) {
+    return x * y;
+}
+undefined
+function divide(x,y) {
+    return x / y;
+}
+undefined
+function calculator(x,y,operator) {
+    return operator(x,y)
+}
+undefined
+calculator(2,3,add)
+5
+calculator(2,3,multiply)
+6
+calculator(4,2,divide)
+2
+calculator(4,2,substract)
+2
