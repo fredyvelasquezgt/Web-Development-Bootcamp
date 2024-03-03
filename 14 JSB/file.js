@@ -256,3 +256,12 @@ calculator(4,2,divide)
 2
 calculator(4,2,substract)
 2
+
+//objects
+function HouseKeeper(name, yearsOfExperience, cleaningRepertoir) {
+  this.name = name;
+  this.yearsOfExperienice = yearsOfExperience;
+  this.cleaningRepertoir = cleaningRepertoir;
+}
+var houseKeeper2 = new House
+var houseKeeper2 = new HouseKeeper('Sara', 10, ['rooms', 'dogs'])
