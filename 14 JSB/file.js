@@ -265,3 +265,4 @@ function HouseKeeper(name, yearsOfExperience, cleaningRepertoir) {
 }
 var houseKeeper2 = new House
 var houseKeeper2 = new HouseKeeper('Sara', 10, ['rooms', 'dogs'])
+
