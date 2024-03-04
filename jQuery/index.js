@@ -21,6 +21,8 @@
 //     $("h1").text(event.key);
 // })
 
-$(document).on("mouseover", function() {
-    $("h1").css("color", "purple")
-})
+// $(document).on("mouseover", function() {
+//     $("h1").css("color", "purple")
+// })
+
+//add and remove with jquery
