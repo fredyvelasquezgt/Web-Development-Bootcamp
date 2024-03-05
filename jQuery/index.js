@@ -13,16 +13,16 @@
 
 //eventListeners
 
-// $("h1").click(function() {
-//     $("h1").css("color", "purple")
-// })
+$("h1").click(function() {
+    $("h1").css("color", "purple")
+})
 
-// $(document).keypress(function(event){
-//     $("h1").text(event.key);
-// })
+$(document).keypress(function(event){
+    $("h1").text(event.key);
+})
 
-// $(document).on("mouseover", function() {
-//     $("h1").css("color", "purple")
-// })
+$(document).on("mouseover", function() {
+    $("h1").css("color", "purple")
+})
 
 //add and remove with jquery
