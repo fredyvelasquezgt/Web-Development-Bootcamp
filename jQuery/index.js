@@ -7,9 +7,9 @@
 
 //attributes
 
-//$("img").attr("src")
+$("img").attr("src")
 
-//$("a").attr("href", "htt")
+$("a").attr("href", "htt")
 
 //eventListeners
 
