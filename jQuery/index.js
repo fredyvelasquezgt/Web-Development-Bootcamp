@@ -1,9 +1,9 @@
 
 //$("h1").text("Bye")
 
-//$("button").html("<em>pls click me</em>")
+$("button").html("<em>pls click me</em>")
 
-//$("h1").hasClass("margin-50")
+$("h1").hasClass("margin-50")
 
 //attributes
 
