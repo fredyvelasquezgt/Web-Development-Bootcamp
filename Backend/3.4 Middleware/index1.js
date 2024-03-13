@@ -6,6 +6,7 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({extended:true}))
 
+
 app.post("/submit", (req, res) => {
   console.log(req.body)
 })
