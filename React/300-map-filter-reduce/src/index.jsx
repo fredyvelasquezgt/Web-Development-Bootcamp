@@ -6,6 +6,9 @@ function double(x) {
   return x * 2;
 }
 
+const newNumber = numbers.map(double);
+console.log(newNumber);
+
 //Filter - Create a new array by keeping the items that return true.
 
 //Reduce - Accumulate a value by doing something to each item in an array.
