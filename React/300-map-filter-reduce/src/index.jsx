@@ -11,7 +11,7 @@ var numbers = [3, 56, 2, 48, 5];
 
 //Filter - Create a new array by keeping the items that return true.
 
-numbers.filter(function (num) {
+const newNumbers = numbers.filter(function (num) {
   return num > 10;
 });
 
