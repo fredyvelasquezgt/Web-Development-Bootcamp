@@ -23,4 +23,5 @@ const newNumbers = numbers.filter(function (num) {
 //Find
 //find the first item that matches from an array.
 
-//FindIndex - find the index of the first item that matches.
+//FindIndex
+//find the index of the first item that matches.
