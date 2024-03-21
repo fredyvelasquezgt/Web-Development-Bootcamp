@@ -10,7 +10,8 @@ var numbers = [3, 56, 2, 48, 5];
 // const newNumber = numbers.map(double);
 // console.log(newNumber);
 
-//Filter - Create a new array by keeping the items that return true.
+//Filter
+//Create a new array by keeping the items that return true.
 
 const newNumbers = numbers.filter(function (num) {
   return num > 10;
