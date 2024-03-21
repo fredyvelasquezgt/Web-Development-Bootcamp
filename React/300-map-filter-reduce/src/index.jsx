@@ -17,7 +17,8 @@ const newNumbers = numbers.filter(function (num) {
   return num > 10;
 });
 
-//Reduce - Accumulate a value by doing something to each item in an array.
+//Reduce
+//Accumulate a value by doing something to each item in an array.
 
 //Find - find the first item that matches from an array.
 
