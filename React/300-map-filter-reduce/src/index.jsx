@@ -25,3 +25,5 @@ const newNumbers = numbers.filter(function (num) {
 
 //FindIndex
 //find the index of the first item that matches.
+
+//ex here 
