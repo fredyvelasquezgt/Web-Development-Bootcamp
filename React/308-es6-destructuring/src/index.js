@@ -2,10 +2,16 @@ import animals from "./data";
 
 const [cat, dog] = animals;
 
-const { name: catName, sound: catSound } = cat;
+// const { name: catName, sound: catSound } = cat;
 
 //set default values
-const { name = "Fluffy", sound = "purrr" } = cat;
+// const { name = "Fluffy", sound = "purrr" } = cat;
+
+const {
+  name,
+  sound,
+  feedRequirements: { food, water },
+} = cat;
 
 // CHALLENGE: uncomment the code below and see the car stats rendered
 // import React from "react";
