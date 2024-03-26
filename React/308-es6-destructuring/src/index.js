@@ -2,6 +2,8 @@ import animals from "./data";
 
 const [cat, dog] = animals;
 
+const { name: catName, sound: catSound } = cat;
+
 // CHALLENGE: uncomment the code below and see the car stats rendered
 // import React from "react";
 // import ReactDOM from "react-dom";
