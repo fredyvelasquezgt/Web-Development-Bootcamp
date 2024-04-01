@@ -4,8 +4,15 @@ function App() {
   const [contact, setContact] = useState({
     fName: "",
     lName: "",
-    email: ""
+    email: "",
   });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+  }
+
+    
 
   return (
     <div className="container">
@@ -14,9 +21,9 @@ function App() {
       </h1>
       <p>{contact.email}</p>
       <form>
-        <input name="fName" placeholder="First Name" />
-        <input name="lName" placeholder="Last Name" />
-        <input name="email" placeholder="Email" />
+        <input onChange={handleChange} name="fName" placeholder="First Name" />
+        <input onChange={handleChange} name="lName" placeholder="Last Name" />
+        <input onChange={handleChange} name="email" placeholder="Email" />
         <button>Submit</button>
       </form>
     </div>
