@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
 
 function App() {
   const [inputText, setInputText] = useState("");
@@ -10,7 +11,7 @@ function App() {
   }
 
   function addItem() {
-    setItems(prevItems => {
+    setItems((prevItems) => {
       return [...prevItems, inputText];
     });
     setInputText("");
@@ -27,13 +28,7 @@ function App() {
           <span>Add</span>
         </button>
       </div>
-      <div>
-        <ul>
-          {items.map(todoItem => (
-            <li>{todoItem}</li>
-          ))}
-        </ul>
-      </div>
+      <ToDoItem items={items} />
     </div>
   );
 }
