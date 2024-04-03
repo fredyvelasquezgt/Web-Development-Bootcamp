@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 
+//todo list completed
+
 function App() {
   const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);
