@@ -22,14 +22,16 @@ app.get("/noAuth", async  (req, res) => {
   } catch (error) {
     res.status(404).send("Error", error.message)
   }
-  
-  //The data you get back should be sent to the ejs file as "content"
-  //Hint: make sure you use JSON.stringify to turn the JS object from axios into a string.
 });
 
-app.get("/basicAuth", (req, res) => {
-  //TODO 3: Write your code here to hit up the /all endpoint
-  //Specify that you only want the secrets from page 2
+app.get("/basicAuth", async(req, res) => {
+  try {
+    const result = await axios.get(API_URL+"all?page=2")
+    console.log(result)
+
+  } catch (error) {
+    
+  }
   //HINT: This is how you can use axios to do basic auth:
   // https://stackoverflow.com/a/74632908
   /*
