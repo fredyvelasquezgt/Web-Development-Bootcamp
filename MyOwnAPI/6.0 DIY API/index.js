@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/random", (req, res) => {
     const randomIndex = Math.floor(Math.random()*jokes.length)
-    res.json(jokes[randomIndex]);
+    res.json(jokes[randomIndex]); // donde se devuelve un objeto JSON 
 })
 
 //2. GET a specific joke
@@ -31,6 +31,17 @@ app.get("/filter", (req, res) => {
 })
 
 //4. POST a new joke
+
+app.post("/jokes", (req, res) => {
+  const newJoke = {
+    id: jokes.length + 1,
+    jokeText: req.body.text,
+    jokeType: req.body.type
+  };
+  jokes.push(newJoke);
+  console.log(jokes.slice(-1))
+  res.json(newJoke)
+})
 
 //5. PUT a joke
 
