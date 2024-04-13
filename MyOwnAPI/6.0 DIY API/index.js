@@ -33,8 +33,8 @@ app.get("/filter", (req, res) => {
 //4. POST a new joke
 
 app.post("/jokes", (req, res) => {
-  const newJoke = {
-    id: jokes.length + 1,
+  const newJoke = { //create new object with the data that I want to post
+    id: jokes.length + 1, 
     jokeText: req.body.text,
     jokeType: req.body.type
   };
@@ -45,9 +45,15 @@ app.post("/jokes", (req, res) => {
 
 //5. PUT a joke
 
+app.put()
+
 //6. PATCH a joke
 
+
+
 //7. DELETE Specific joke
+
+
 
 //8. DELETE All jokes
 
