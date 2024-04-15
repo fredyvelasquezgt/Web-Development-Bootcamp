@@ -43,9 +43,21 @@ app.post("/jokes", (req, res) => {
   res.json(newJoke)
 })
 
-//5. PUT a joke
+//5. PUT a joke - complete update
 
-app.put()
+app.put("jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  }
+
+  const searchIndex = jokes.findIndex((joke) => joke.id === id); //returns the first index that satisfies a condition
+  jokes[searchIndex] = replacementJoke;
+  res.json(replacementJoke)
+
+})
 
 //6. PATCH a joke
 
