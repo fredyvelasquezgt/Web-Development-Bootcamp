@@ -82,6 +82,10 @@ app.patch("/posts/:id", (req, res) => {
   if (!post) return res.status(404).json({message: "Post not found" })
   
   if(req.body.title) post.title = req.body.title;
+  if(req.body.content) post.content = req.body.content;
+  if(req.body.author) post.author = req.body.author;
+
+  res.json(post)
 
 })
 
