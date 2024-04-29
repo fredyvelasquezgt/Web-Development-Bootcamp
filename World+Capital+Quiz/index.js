@@ -13,12 +13,25 @@ const db = new pg.Client({
   port: 5432
 })
 
+db.connect();
+
+
+
 
 let quiz = [
   { country: "France", capital: "Paris" },
   { country: "United Kingdom", capital: "London" },
   { country: "United States of America", capital: "New York" },
 ];
+
+db.query("SELECT * FROM capitals", (err, res) => {
+  if(err) {
+    console.log('Error executing query', err.stack);
+  } else {
+    quiz = res.rows;
+  }
+  db.end();
+})
 
 let totalCorrect = 0;
 
