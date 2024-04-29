@@ -16,7 +16,11 @@ WHERE country = 'United States'
 SELECT country, wheat_production
 FROM world_food
 WHERE wheat_production > 20;
---WHERE LIKE - pattern
+--WHERE LIKE - pattern - all records that starts with "U"
 SELECT country 
 FROM world_food
 WHERE country LIKE 'U' || '%';
+--WHERE LIKE - pattern - finishes with "a"
+SELECT country 
+FROM world_food
+WHERE country LIKE '%' || 'a';
