@@ -59,3 +59,15 @@ CREATE TABLE homework_submission (
   mark INTEGER,
   student_id INTEGER REFERENCES student(id) --this is the important part--
 );
+
+--MANY TO ONE --
+SELECT student.id, first_name, last_name, mark
+FROM student
+JOIN homework_submission
+ON student.id = student_id
+
+--MANY TO ONE BUT PRETTIER --
+SELECT student.id, first_name, last_name, mark
+FROM student
+JOIN homework_submission
+ON student.id = student_id
