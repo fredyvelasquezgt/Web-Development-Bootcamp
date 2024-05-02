@@ -52,3 +52,10 @@ SELECT *
 FROM student
 JOIN contact_detail
 ON student.id = contact_detail.id
+
+-- MANY TO ONE --
+CREATE TABLE homework_submission (
+  id SERIAL PRIMARY KEY,
+  mark INTEGER,
+  student_id INTEGER REFERENCES student(id) --this is the important part--
+);
