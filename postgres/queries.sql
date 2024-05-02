@@ -46,3 +46,9 @@ CREATE TABLE contact_detail (
   tel TEXT,
   address TEXT
 );
+
+--INNER JOIN--
+SELECT * 
+FROM student
+JOIN contact_detail
+ON student.id = contact_detail.id
