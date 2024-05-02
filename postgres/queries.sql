@@ -33,3 +33,16 @@ CREATE TABLE countries (
 	country_code char(2),
 	country_name VARCHAR(100)
 )
+--ONE TO ONE RELATIONSHIP
+CREATE TABLE student (
+  id SERIAL PRIMARY KEY,
+  first_name TEXT,
+  last_name TEXT
+);
+
+-- One to One --
+CREATE TABLE contact_detail (
+  id INTEGER REFERENCES student(id) UNIQUE,
+  tel TEXT,
+  address TEXT
+);
