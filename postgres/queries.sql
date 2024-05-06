@@ -71,3 +71,17 @@ SELECT student.id, first_name, last_name, mark
 FROM student
 JOIN homework_submission
 ON student.id = student_id
+
+--MANY TO MANY--
+
+CREATE TABLE class (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(45)
+);
+
+--TABLE THAT HOLDS THE RELATIONSHIP
+CREATE TABLE enrollment (
+  student_id INTEGER REFERENCES student(id),
+  class_id INTEGER REFERENCES class(id),
+  PRIMARY KEY (student_id, class_id)
+);
