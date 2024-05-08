@@ -116,4 +116,4 @@ ORDER BY name DESC
 
 --DELETE DATA--
 DELETE FROM visited_countries
-WHERE id = 6
+WHERE id = 6 AND country_code = 'FR'
