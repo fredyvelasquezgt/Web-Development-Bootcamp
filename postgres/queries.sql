@@ -113,3 +113,7 @@ JOIN class c ON c.id = e.class_id;
 
 SELECT * FROM users
 ORDER BY name DESC
+
+--DELETE DATA--
+DELETE FROM visited_countries
+WHERE id = 6
