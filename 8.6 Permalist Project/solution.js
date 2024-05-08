@@ -22,6 +22,8 @@ let items = [
   { id: 2, title: "Finish homework" },
 ];
 
+
+//read
 app.get("/", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM items ORDER BY id ASC");
@@ -47,6 +49,9 @@ app.post("/add", async (req, res) => {
   }
 });
 
+
+//item and id needed
+//got them from the index.ejs
 app.post("/edit", async (req, res) => {
   const item = req.body.updatedItemTitle;
   const id = req.body.updatedItemId;
