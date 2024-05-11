@@ -32,8 +32,15 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  const username = req.body.username;
+  const email = req.body.username;
   const password = req.body.password;
+
+  const result = await db.query(
+    "INSERT INTO users (email, password) VALUES ($1, $2)",
+    [email, password]
+  );
+  console.log(result)
+  res.render("secrets.ejs")
 
 
 });
