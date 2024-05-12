@@ -47,8 +47,21 @@ app.post("/register", async (req, res) => {
   if(checkResult.rows.length > 0) {
     res.send("Email already exists. Try logging in.")
   } else {
-    const result = await db.query("INSERT INTO users (email, password) VALUES ($1, $2)",
-    [email, password])
+    bcrypt.hash(password, saltRounds, async (err, hash)=>{
+      if(err) {
+        console.log('hashing error', err)
+      } else {
+        //insert data into my database
+        const result = await db.query(
+          "INSERT INTO users (email, password) VALUES ($1, $2)",
+          [email, password]
+        );
+        console.log(result)
+        res.render("secrets.ejs")
+      }
+    
+    })
+  
   }
   console.log(result)
   res.render("secrets.ejs")
@@ -57,13 +70,7 @@ app.post("/register", async (req, res) => {
     console.log(err)
   }
 
-  //insert data into my database
-  const result = await db.query(
-    "INSERT INTO users (email, password) VALUES ($1, $2)",
-    [email, password]
-  );
-  console.log(result)
-  res.render("secrets.ejs")
+
 
 
 });
