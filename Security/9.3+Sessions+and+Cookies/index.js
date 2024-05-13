@@ -4,6 +4,7 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 import session from 'express-session'
 import passport from "passport";
+import { Strategy } from "passport-local";
 
 const app = express();
 const port = 3000;
@@ -59,36 +60,20 @@ app.post("/register", async (req, res) => {
   const email = req.body.username;
   const password = req.body.password;
 
-  try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
-    ]);
-
-    if (checkResult.rows.length > 0) {
-      res.send("Email already exists. Try logging in.");
-    } else {
-      //hashing the password and saving it in the database
-      bcrypt.hash(password, saltRounds, async (err, hash) => {
-        if (err) {
-          console.error("Error hashing password:", err);
-        } else {
-          console.log("Hashed Password:", hash);
-          await db.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2)",
-            [email, hash]
-          );
-          res.render("secrets.ejs");
-        }
-      });
-    }
-  } catch (err) {
-    console.log(err);
-  }
 });
 
 app.post("/login", async (req, res) => {
   const email = req.body.username;
   const loginPassword = req.body.password;
+
+  
+});
+
+//local strategy
+//if the user has the right password o
+passport.use(new Strategy(function verify(username, password, cb) {
+
+  console.log(username)
 
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
@@ -114,7 +99,7 @@ app.post("/login", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
-});
+}))
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
