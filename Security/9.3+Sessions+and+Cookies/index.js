@@ -32,8 +32,8 @@ app.use(passport.session())
 
 
 const db = new pg.Client({
-  user: PG_USER,
-  host: "localhost",
+  user: process.env.USER,
+  host: process.env.HOST,
   database: "secrets",
   password: "123456",
   port: 5432,
