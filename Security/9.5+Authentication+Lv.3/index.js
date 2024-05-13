@@ -6,6 +6,7 @@ import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
 import env from "dotenv";
+import { GoogleStrategy } from 'passport-google-oauth2';
 
 const app = express();
 const port = 3000;
@@ -138,6 +139,14 @@ passport.use(
     }
   })
 );
+
+//create strategy
+passport.use("google", new GoogleStrategy({
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://localhost3000/auth/google/secrets",
+  userProfileURL:
+}))
 
 passport.serializeUser((user, cb) => {
   cb(null, user);
