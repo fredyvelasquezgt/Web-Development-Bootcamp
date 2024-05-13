@@ -17,7 +17,10 @@ app.use(express.static("public"));
 app.use(session({
   secret: 'TOPSECRETWORD',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24, //duration of the cookie
+  }
 }))
 
 //passport should be after the session
@@ -49,7 +52,7 @@ app.get("/register", (req, res) => {
 
 
 app.get("/secrets", (req, res) => {
-  //console.log(req.user)
+  console.log(req.user)
  if(req.isAuthenticated()) { //is the current user in the current sesion auth?
   res.render("secrets.ejs")
  } else {
