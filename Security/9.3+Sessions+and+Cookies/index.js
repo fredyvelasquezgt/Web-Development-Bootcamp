@@ -46,6 +46,15 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
+
+app.get("/secrets", (req, res) => {
+ if(req.isAuthenticated()) { //is the current user in the current sesion auth?
+  res.render("secrets.ejs")
+ } else {
+  res.redirect("login.ejs")
+ }
+})
+
 app.post("/register", async (req, res) => {
   const email = req.body.username;
   const password = req.body.password;
