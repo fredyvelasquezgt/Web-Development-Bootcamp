@@ -58,17 +58,16 @@ app.get("/secrets", (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-  const email = req.body.username;
-  const password = req.body.password;
+  // const email = req.body.username;
+  // const password = req.body.password;
+  res.render("register.ejs")
 
 });
 
-app.post("/login", async (req, res) => {
-  const email = req.body.username;
-  const loginPassword = req.body.password;
-
-  
-});
+app.post("/login", passport.authenticate("local", {
+  successRedirect: "/secrets",
+  failureRedirect: "'login"
+}))
 
 //local strategy
 //if the user has the right password o
@@ -101,6 +100,15 @@ passport.use(new Strategy(async function verify(username, password, cb) {
     return cb("Error")
   }
 }))
+
+//we can save the data of the user to localStorage
+passport.serializeUser((user, cb) => {
+  cb(null, user)
+})
+
+passport.deserializeUser((user, cb) => {
+  cb(null, user)
+})
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
