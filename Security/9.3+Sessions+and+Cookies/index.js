@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
 import session from 'express-session'
-import passport from "passport";
+import passport, { use } from "passport";
 import { Strategy } from "passport-local";
 
 const app = express();
@@ -49,6 +49,7 @@ app.get("/register", (req, res) => {
 
 
 app.get("/secrets", (req, res) => {
+  //console.log(req.user)
  if(req.isAuthenticated()) { //is the current user in the current sesion auth?
   res.render("secrets.ejs")
  } else {
@@ -71,33 +72,33 @@ app.post("/login", async (req, res) => {
 
 //local strategy
 //if the user has the right password o
-passport.use(new Strategy(function verify(username, password, cb) {
+passport.use(new Strategy(async function verify(username, password, cb) {
 
   console.log(username)
 
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
+      username,
     ]);
     if (result.rows.length > 0) {
       const user = result.rows[0];
       const storedHashedPassword = user.password;
-      bcrypt.compare(loginPassword, storedHashedPassword, (err, result) => {
+      bcrypt.compare(password, storedHashedPassword, (err, result) => {
         if (err) {
-          console.error("Error comparing passwords:", err);
+          return cb(err)
         } else {
           if (result) {
-            res.render("secrets.ejs");
+            return cb(null, user)
           } else {
-            res.send("Incorrect Password");
+            return cb(null, false)
           }
         }
       });
     } else {
-      res.send("User not found");
+      return cb("User not found")
     }
   } catch (err) {
-    console.log(err);
+    return cb("Error")
   }
 }))
 
