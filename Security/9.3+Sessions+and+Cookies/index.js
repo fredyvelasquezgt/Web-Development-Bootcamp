@@ -11,11 +11,17 @@ const saltRounds = 10;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+
 app.use(session({
   secret: 'TOPSECRETWORD',
   resave: false,
   saveUninitialized: true
 }))
+
+//passport should be after the session
+app.use(passport.initialize());
+app.use(passport.session())
 
 
 
